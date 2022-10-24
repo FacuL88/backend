@@ -5,4 +5,8 @@ class User {
         this.libros = libros;
         this.mascotas = mascotas;
     }
+
+    getFullName() {
+        return this.nombre, this.apellido;
+    }
 }
