@@ -10,33 +10,33 @@ class User {
         console.log(`El nombre completo es: ${this.nombre}, ${this.apellido}`);
     }
 
-    addMascotas(nombreDeMascota){
-        this.mascotas.push(nombreDeMascota);
+    addMascotas(){
+        this.mascotas.push('mora', 'india');
     }
 
     countMascotas(){     
             console.log(`La cantidad de mascotas son: ${this.mascotas.length}`);        
     }
 
-    addBook(libros, autorLibro){
-        this.libros.push([{nombre:libros, autor:autorLibro}]);
+    addBook(nombreDeLibros){
+        this.libros.push(nombreDeLibros);
     }
 
-    getBookName(){
-        const nombreDeLibros = this.libros.map(libro => libro.nombreLibro)
-        console.log(`Libros: ${nombreDeLibros}`);
-        const nombreAutor = this.libros.map(libro=>libro.autor)
-        console.log(`Autor: ${nombreAutor}`);
-    }
+/*     getBookName(){
+        libros.map(element => element.nombreLibro)
+    } */
 
 }
 
-const user1 = new User('Facundo', 'Laugle', [{nombreLibro: 'El hobbit', autor: 'JRR Tolkin'}], ['mora', 'india']);
+const nombreDeLibros = [{nombreLibro: 'El hobbit', nombreAutor: 'JRR Tolkien'}]
+const nombreDeMascotas = [];
+
+const user1 = new User('Facundo', 'Laugle', nombreDeLibros, nombreDeMascotas);
 
 user1.getFullName();
 user1.addMascotas();
 user1.countMascotas();
 user1.addBook();
-user1.getBookName();
+/* user1.getBookName(); */
 
 console.log(user1);
