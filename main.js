@@ -23,9 +23,11 @@ class User {
     }
 
     getBookName(){
-        nombreDeLibros.map(libro => {
-            console.log(libro);
+        const newArray = this.libros.map(element => {
+            console.log(element);
         })
+
+        /* return newArray; */
     }
 
 }
