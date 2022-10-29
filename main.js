@@ -32,13 +32,10 @@ class User {
 
 }
 
-const nombreDeLibros = [{nombreLibro: 'El hobbit', nombreAutor: 'JRR Tolkien'}]
-const nombreDeMascotas = ['mora', 'india'];
-
-const user1 = new User('Facundo', 'Laugle', nombreDeLibros, nombreDeMascotas);
+const user1 = new User('Facundo', 'Laugle', [{nombreLibro: 'El hobbit', nombreAutor: 'JRR Tolkien'}], ['mora', 'india']);
 
 user1.getFullName();
-user1.addMascotas();
+user1.addMascotas('patan');
 user1.countMascotas();
 user1.addBook();
 user1.getBookName();
