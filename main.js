@@ -23,11 +23,11 @@ class User {
     }
 
     getBookName(){
-        const newArray = this.libros.map(element => {
-            console.log(element);
+        const array = this.libros.map(element => {
+            return array;
         })
 
-        /* return newArray; */
+        /* return array; */
     }
 
 }
@@ -37,7 +37,7 @@ const user1 = new User('Facundo', 'Laugle', [{nombreLibro: 'El hobbit', nombreAu
 user1.getFullName();
 user1.addMascotas('patan');
 user1.countMascotas();
-user1.addBook();
+user1.addBook({nombreLibro: 'El Principito', nombreAutor:'Fulano'});
 user1.getBookName();
 
 console.log(user1);
