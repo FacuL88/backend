@@ -22,12 +22,9 @@ class User {
         this.libros.push(nombreDeLibros);
     }
 
-/*     getBookName(){
-        const array = this.libros.map(element => element.nombre {
-            console.log();
-        })
- */
-        /* return array; */
+    getBookName(){
+        const newArray = this.libros.map(element =>  element.nombreLibro)
+        return console.log(newArray)        
     }
 
 }
