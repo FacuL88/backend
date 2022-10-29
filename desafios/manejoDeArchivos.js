@@ -5,15 +5,24 @@ class Contenedor {
         this.nombreArchivo = nombreArchivo;
     }
 
-    save(objeto){
-        fs.promises.appendFile('./productos.txt', objeto);
-        console.log(objeto);            
+    save(obj){
+        async function agregar() {
+            try {
+                await fs.promises.appendFile('./productos.txt', 'utf-8');
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        agregar()            
     }
 }
 
-
-let objeto = [
-    {id:1, title: 'celular', price: 64000},
-    {id:2, title: 'notebook', price: 64000},
-    {id:3, title: 'smartTV', price: 64000},
+let obj = [
+    {id:1, title:'celular', price: 65424},
+    {id:2, title:'celular', price: 65424},
+    {id:3, title:'celular', price: 65424}
 ]
+
+const contenedor = new Contenedor('productos.txt')
+
+console.log(contenedor);
