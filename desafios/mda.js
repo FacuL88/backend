@@ -7,19 +7,25 @@ class Contenedor {
     
     async save(obj){
         try {
-            await fs.promises.writeFile(`${this.nombre}.txt`, 'utf-8')
+            await fs.promises.writeFile(`${this.nombre}.txt`, JSON.stringify(obj))            
         } catch (error) {
             console.log(error);
-        }
+        }        
+
+        let leerArchivo = fs.readFileSync(`${this.nombre}.txt`, JSON.parse(obj))
+        leerArchivo.filter(element => {
+            console.log(element.id);
+        })
     }
 }
 
 const contenido = new Contenedor('productos')
 
-console.log(contenido.save());
 
-/* let obj = [
+let obj = [
     {id:1, title:'celular', price:3540},
-    {id:2, title:'celular', price:3540},
-    {id:3, title:'celular', price:3540}
-] */
+    {id:2, title:'notebook', price:10540},
+    {id:3, title:'televisor', price:13540}
+]
+
+console.log(contenido.save(obj));
