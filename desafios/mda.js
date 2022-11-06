@@ -11,11 +11,6 @@ class Contenedor {
         } catch (error) {
             console.log(error);
         }        
-
-        let leerArchivo = fs.readFileSync(`${this.nombre}.txt`, JSON.parse(obj))
-        leerArchivo.filter(element => {
-            console.log(element.id);
-        })
     }
 }
 

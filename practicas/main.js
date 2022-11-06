@@ -14,3 +14,32 @@ for (let index = 0; index <= 10000; index++) {
 }
 
 console.log(numerosSalidos);
+
+
+const productos = [
+    {id:1, nombre:'escuadra', precio:215863},
+    {id:1, nombre:'escuadra', precio:215863},
+    {id:1, nombre:'escuadra', precio:215863},
+    {id:1, nombre:'escuadra', precio:215863}
+]
+
+function getNombres(prods) {
+    const nombres = []
+    for (const producto of prods) {
+        nombres.push(producto.nombre)
+    }
+
+    return nombres.join(',')
+}
+
+console.log(getNombres(productos));
+
+
+function getPrecioPromedio(prods) {
+    if (prods.length == 0) {
+        return 0
+    }
+    return getPrecioTotal(prods) / prods.length
+}
+
+console.log(getPrecioPromedio(productos));
